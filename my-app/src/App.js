@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+import Person from './Person/Person.js'
 
 class App extends Component {
     render() {
-    /*return (
+    return (
     <div className="App">
         <h1>Hi, This is a React App</h1>
-    </div>*/
+        <Person/>
+    </div>
     /*<div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -23,9 +25,12 @@ class App extends Component {
         </a>
       </header>
     </div>
-  );*/
-    return React.createElement('div', null, React.createElement('div', { className: "App" }, React.createElement('h1', null, 'Hi, This is a React App')))
+*/
+    //return React.createElement('div', null, React.createElement('div', { className: "App" }, React.createElement('h1', null, 'Hi, This is a React App')))
+     );
     }
 }
 
 export default App;
+
+
