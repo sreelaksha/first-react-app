@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
+class App extends Component {
+    render() {
+    /*return (
     <div className="App">
         <h1>Hi, This is a React App</h1>
-    </div>
+    </div>*/
     /*<div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -21,8 +22,10 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>*/
-  );
+    </div>
+  );*/
+    return React.createElement('div', null, React.createElement('div', { className: "App" }, React.createElement('h1', null, 'Hi, This is a React App')))
+    }
 }
 
 export default App;
