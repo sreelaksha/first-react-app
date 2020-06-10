@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Person/Person.css'
 
 //class UserInput extends Component {
        // render() {

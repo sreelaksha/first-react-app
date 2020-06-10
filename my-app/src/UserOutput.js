@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Person/Person.css'
 
 //class UserOutput extends Component {
         //render() {
@@ -7,7 +7,7 @@ import React from 'react';
          const userOutput = (props) => {
              return(
 
-                <div>
+                <div className = "UserOutput">
                    <p> This is paragraph with username {props.username} </p>
                 </div>
                 );
