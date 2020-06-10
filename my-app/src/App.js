@@ -25,9 +25,17 @@ class App extends Component {
 
 
         render(){
+            const style = {
+                        backgroundColor: 'grey',
+                        font: 'inherit',
+                        border: '1px solid blue',
+                        padding: '8px',
+                        cursor: 'pointer'
+                    };
+
              return (
                 <div className="App">
-                        <h1>Hi, This is a React App</h1>
+                        <h1 style = {style} >Hi, this is my React assignment</h1>
                        <UserOutput username = {this.state.output[0].username}/>
                        <UserOutput username = {this.state.output[1].username}/>
                        <UserInput
