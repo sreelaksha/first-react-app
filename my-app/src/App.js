@@ -9,7 +9,7 @@ import UserOutput from './UserOutput.js';
 class App extends Component {
         state = {
                  output : [
-                   { username: "Laks" }
+                   { username: "Laksha" }
                  ]
              }
 
