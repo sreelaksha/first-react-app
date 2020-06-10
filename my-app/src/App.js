@@ -9,15 +9,16 @@ import UserOutput from './UserOutput.js';
 class App extends Component {
         state = {
                  output : [
-                   { username: "Lakshu" }
+                   { username: "Laks" }
                  ]
              }
 
         inputChangeHandler = (event) => {
                     this.setState({
-                                        
-
-                                    })
+                            output : [
+                                         { username: event.target.value}
+                                      ]
+                         })
              }
 
 
@@ -27,7 +28,9 @@ class App extends Component {
                         <h1>Hi, This is a React App</h1>
                        <UserOutput username = {this.state.output[0].username}/>
 
-                       <UserInput/>
+                       <UserInput
+                            changed = {this.inputChangeHandler}
+                       />
                 </div>
              );
         }
