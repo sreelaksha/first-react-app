@@ -7,10 +7,9 @@ import React from 'react';
          const userOutput = (props) => {
              return(
 
-                <div >
+               <div >
                     <p> This is paragraph with username {props.username} </p>
-                    <p/>
-                </div>
+               </div>
                 );
         }
 

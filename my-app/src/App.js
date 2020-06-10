@@ -7,18 +7,23 @@ import UserInput from './UserInput.js';
 import UserOutput from './UserOutput.js';
 
 class App extends Component {
-        render() {
+        state = {
+                 output : [
+                   { username: "Lakshu" }
+                 ]
+             }
+
+        render(){
              return (
                 <div className="App">
                         <h1>Hi, This is a React App</h1>
-                       <UserOutput username = "Sreelaksha"/>
-                          <UserOutput/>
+                       <UserOutput username = {this.state.output[0].username}/>
 
-                         <UserInput/>
+                       <UserInput/>
                 </div>
              );
         }
-    }
+}
 
 
 
