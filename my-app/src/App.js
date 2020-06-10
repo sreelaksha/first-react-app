@@ -39,7 +39,7 @@ class App extends Component {
                        <UserOutput username = {this.state.output[0].username}/>
                        <UserOutput username = {this.state.output[1].username}/>
                        <UserInput
-                            changed = {this.inputChangeHandler}
+                            changed = {this.inputChangeHandler.bind(this)}
                        />
                 </div>
              );
