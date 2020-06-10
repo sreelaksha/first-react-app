@@ -11,6 +11,7 @@ class App extends Component {
              return (
                 <div className="App">
                         <h1>Hi, This is a React App</h1>
+                        <UserInput/>
                          <UserOutput para = "Hi this is p1"/>
                 </div>
              );

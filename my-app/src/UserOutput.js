@@ -5,13 +5,14 @@ import React from 'react';
         //render() {
 
          const userOutput = (props) => {
-             return
+             return(
+
                 //<div className = "UserOutput">
                     <p> This is paragraph1 {props.para} </p>
                    // <p name= "p2"> Paragraph2 </p>
                 //</div>
-
+                );
         }
-    }
+
 
 export default userOutput;
