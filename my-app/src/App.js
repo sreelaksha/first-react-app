@@ -13,6 +13,14 @@ class App extends Component {
                  ]
              }
 
+        inputChangeHandler = (event) => {
+                    this.setState({
+                                        
+
+                                    })
+             }
+
+
         render(){
              return (
                 <div className="App">
