@@ -8,8 +8,8 @@ import React from 'react';
              return(
 
                 //<div className = "UserOutput">
-                    <p> This is paragraph1 {props.para} </p>
-                   // <p name= "p2"> Paragraph2 </p>
+                    <p> This is paragraph {props.para} with username {props.username} </p>
+                    <p > Paragraph2 </p>
                 //</div>
                 );
         }

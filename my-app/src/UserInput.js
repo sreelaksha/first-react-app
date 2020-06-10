@@ -7,8 +7,7 @@ import React from 'react';
        const userInput = (props) => {
              return (
                     <div className = "UserInput">
-                    <h1> UserInput</h1>
-                    <input type= "text"  />
+                    <input type= "text" value = "user-input " />
                     </div>
              );
         }
