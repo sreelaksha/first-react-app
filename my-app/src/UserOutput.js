@@ -7,10 +7,10 @@ import React from 'react';
          const userOutput = (props) => {
              return(
 
-                //<div className = "UserOutput">
-                    <p> This is paragraph {props.para} with username {props.username} </p>
-                    <p > Paragraph2 </p>
-                //</div>
+                <div >
+                    <p> This is paragraph with username {props.username} </p>
+                    <p/>
+                </div>
                 );
         }
 
