@@ -1,7 +1,28 @@
+
 import React, { Component } from 'react';
 import './App.css';
-import Person from './Person/Person.js'
+//import Person from './Person/Person.js'
 
+import UserInput from './UserInput.js';
+import UserOutput from './UserOutput.js';
+
+class App extends Component {
+        render() {
+             return (
+                <div className="App">
+                        <h1>Hi, This is a React App</h1>
+                         <UserOutput para = "Hi this is p1"/>
+                </div>
+             );
+        }
+    }
+
+
+
+
+
+
+/*
 class App extends Component {
     state = {
         persons : [
@@ -11,9 +32,7 @@ class App extends Component {
         ]
 
     }
-
-
-    switchNameHandler = (newName) => {
+     switchNameHandler = (newName) => {
             console.log ('This was clicked!');
             //console.log ('This was clicked!');
             this.setState({
@@ -35,14 +54,23 @@ class App extends Component {
                                 ]
 
                             })
-
-        }
+     }
 
  render() {
+    const style = {
+        backgroundColor: 'white',
+        font: 'inherit',
+        border: '1px solid blue',
+        padding: '8px',
+        cursor: 'pointer'
+    };
+
         return (
             <div className="App">
                 <h1>Hi, This is a React App</h1>
-                <button onClick = {() => this.switchNameHandler('Dachu')}> Switch Name </button>
+                <button
+                    style = {style}
+                    onClick = {() => this.switchNameHandler('Dachu')}> Switch Name </button>
                 <Person
                     name = {this.state.persons[0].name}
                     age = {this.state.persons[0].age} />
@@ -59,8 +87,12 @@ class App extends Component {
         );
     //return React.createElement('div', null, React.createElement('div', { className: "App" }, React.createElement('h1', null, 'Hi, This is a React App')))
     }
-}
+}*/
+
+
 export default App;
+
+
 
 
 
