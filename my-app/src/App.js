@@ -1,52 +1,8 @@
 
 import React, { Component } from 'react';
 import './App.css';
-//import Person from './Person/Person.js'
+import Person from './Person/Person.js'
 
-import UserInput from './UserInput.js';
-import UserOutput from './UserOutput.js';
-
-class App extends Component {
-        state = {
-            output: [
-                    {username1: "Laks"  },
-                    {username2: "Hash"  }
-                ]
-        }
-        inputChangeHandler = (event) => {
-                this.setState({
-                    output: [
-                                { username1: event.target.value},
-                                {username2: "Harish"}
-                             ]
-                            })
-
-                  }
-
-
-        render(){
-
-
-             return (
-                <div className="App">
-                        <h1>Hi, this is my React assignment</h1>
-                       <UserOutput username = {this.state.output[0].username1}/>
-                        <UserOutput username = {this.state.output[1].username2}/>
-                       <UserInput
-                            changed = {this.inputChangeHandler}
-                            currentName = {this.state.output[0].username1}
-                       />
-                </div>
-             );
-        }
-}
-
-
-
-
-
-
-/*
 class App extends Component {
     state = {
         persons : [
@@ -111,10 +67,46 @@ class App extends Component {
         );
     //return React.createElement('div', null, React.createElement('div', { className: "App" }, React.createElement('h1', null, 'Hi, This is a React App')))
     }
-}*/
-
+}
 
 export default App;
+
+/*
+import UserInput from './UserInput.js';
+import UserOutput from './UserOutput.js';
+
+class App extends Component {
+        state = {
+            output: [
+                    {username1: "Laks"  },
+                    {username2: "Hash"  }
+                ]
+        }
+        inputChangeHandler = (event) => {
+                this.setState({
+                    output: [
+                                { username1: event.target.value},
+                                {username2: "Harish"}
+                             ]
+                            })
+             }
+    render(){
+     return (
+                <div className="App">
+                        <h1>Hi, this is my React assignment</h1>
+                       <UserOutput username = {this.state.output[0].username1}/>
+                        <UserOutput username = {this.state.output[1].username2}/>
+                       <UserInput
+                            changed = {this.inputChangeHandler}
+                            currentName = {this.state.output[0].username1}
+                       />
+                </div>
+             );
+        }
+}
+*/
+
+
 
 
 

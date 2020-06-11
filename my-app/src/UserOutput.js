@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import './Person/Person.css'
 
@@ -15,3 +16,4 @@ import './Person/Person.css'
 
 
 export default userOutput;
+*/
