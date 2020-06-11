@@ -8,20 +8,20 @@ import UserOutput from './UserOutput.js';
 
 class App extends Component {
         state = {
-                 output : [
-                   { username: "Laksha" },
-                   { username: "Harish" }
-                 ]
-             }
-
+            output: [
+                    {username1: "Laks"  },
+                    {username2: "Hash"  }
+                ]
+        }
         inputChangeHandler = (event) => {
-                    this.setState({
-                            output : [
-                                         { username: event.target.value},
-                                         { username: "Harish" }
-                                      ]
-                         })
-             }
+                this.setState({
+                    output: [
+                                { username1: event.target.value},
+                                {username2: "Harish"}
+                             ]
+                            })
+
+                  }
 
 
         render(){
@@ -36,10 +36,11 @@ class App extends Component {
              return (
                 <div className="App">
                         <h1 style = {style} >Hi, this is my React assignment</h1>
-                       <UserOutput username = {this.state.output[0].username}/>
-                       <UserOutput username = {this.state.output[1].username}/>
+                       <UserOutput username = {this.state.output[0].username1}/>
+                        <UserOutput username = {this.state.output[1].username2}/>
                        <UserInput
-                            changed = {this.inputChangeHandler.bind(this)}
+                            changed = {this.inputChangeHandler}
+                            currentName = {this.state.output[0].username1}
                        />
                 </div>
              );
