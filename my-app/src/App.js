@@ -49,27 +49,35 @@ class App extends Component {
             cursor: 'pointer'
         };
 
+    let jsPersons = null;
+    if(this.state.showPersons){
+        jsPersons= (
+                            <div>
+                                <Person
+                                    name = {this.state.persons[0].name}
+                                    age = {this.state.persons[0].age} />
+                                <Person
+                                    clickMe = {this.switchNameHandler.bind(this,'Lakku')}
+                                    name = {this.state.persons[1].name}
+                                    age = {this.state.persons[1].age}
+                                    changed = {this.nameChangeHandler}>
+                                    Welcome everyone! </Person>
+                                <Person
+                                    name = {this.state.persons[2].name}
+                                    age = {this.state.persons[2].age} />
+                             </div>
+
+                )
+
+    }
+
         return (
             <div className="App">
                 <h1>Hi, This is a React App</h1>
                 <button
                     style = {style}
                     onClick =  {this.togglePersonsHandler}> Toggle Persons List </button>
-                {this.state.showPersons ?
-                <div>
-                    <Person
-                        name = {this.state.persons[0].name}
-                        age = {this.state.persons[0].age} />
-                    <Person
-                        clickMe = {this.switchNameHandler.bind(this,'Lakku')}
-                        name = {this.state.persons[1].name}
-                        age = {this.state.persons[1].age}
-                        changed = {this.nameChangeHandler}>
-                        Welcome everyone! </Person>
-                    <Person
-                        name = {this.state.persons[2].name}
-                        age = {this.state.persons[2].age} />
-                 </div> : null }
+                {jsPersons}
             </div>
         );
     //return React.createElement('div', null, React.createElement('div', { className: "App" }, React.createElement('h1', null, 'Hi, This is a React App')))
