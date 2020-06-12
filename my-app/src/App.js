@@ -38,16 +38,16 @@ class App extends Component {
                 return p.id ===id;
             })
 
-            const newPersons = {
+            const newPersonsList = {
             ...this.state.persons[personIndex]
             }
 
         //const updatedPersons = Object.assign({},this.state.persons[personIndex];
 
-            newPersons.name = event.target.value;
+            newPersonsList.name = event.target.value;
 
             const updatedPersons =[...this.state.persons] ;
-            updatedPersons[personIndex] = newPersons;
+            updatedPersons[personIndex] = newPersonsList;
 
             this.setState({ persons : updatedPersons})
          }
