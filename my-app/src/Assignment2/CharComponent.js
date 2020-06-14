@@ -11,8 +11,8 @@ import React from 'react';
 
 
         return(
-                <div style = {style}>
-               {props.letters}
+                <div style = {style} onClick = {props.clickMe}>
+                            {props.letters}
                 </div>
          );
 }
