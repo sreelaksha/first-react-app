@@ -15,17 +15,17 @@ class AppA2 extends Component {
                                       }
 
      render() {
-        return (
+          return (
                     <div className="AppA2">
                         <h1>Hi, this is my React Assignment 2</h1>
                         <AppComponent
                                 text={this.state.textEntered.text}
                                 changed = {this.textChangeHandler}
+                         />
+                         <ValidationComponent
+                                    textLength = {this.state.textEntered.text.length}
                         />
-                        <ValidationComponent
-                                textLength = {this.state.textEntered.text.length}
-                        />
-                     </div>
+                    </div>
                 );
      }
 }
