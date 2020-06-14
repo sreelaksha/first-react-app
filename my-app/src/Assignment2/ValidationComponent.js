@@ -8,7 +8,7 @@ const validationComponent = (props) => {
         }
     return(
             <div>
-                <p>{validationMessage}</p>
+                <p>{validationMessage}{props.letters}</p>
             </div>
           )
 

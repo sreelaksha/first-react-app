@@ -16,6 +16,13 @@ class AppA2 extends Component {
                                       }
 
      render() {
+               const differentLetters = this.state.textEntered.text.split('').map((charList,index) => {
+                        return <CharComponent
+                                    key = {index}
+                                     letters = {charList}
+                         />
+                        });
+
           return (
                     <div className="AppA2">
                         <h1>Hi, this is my React Assignment 2</h1>
@@ -26,6 +33,7 @@ class AppA2 extends Component {
                          <ValidationComponent
                                     textLength = {this.state.textEntered.text.length}
                         />
+                        {differentLetters}
                     </div>
                 );
      }

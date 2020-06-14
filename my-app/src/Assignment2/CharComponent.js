@@ -12,6 +12,7 @@ import React from 'react';
 
         return(
                 <div style = {style}>
+               {props.letters}
                 </div>
          );
 }
