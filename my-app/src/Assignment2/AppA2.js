@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 //import './App.css';
 import AppComponent from './AppComponent.js'
 import ValidationComponent from './ValidationComponent.js'
+import CharComponent from './CharComponent.js'
 
 class AppA2 extends Component {
     state = {
