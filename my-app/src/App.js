@@ -1,4 +1,5 @@
 
+/*
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person.js'
@@ -21,7 +22,8 @@ class App extends Component {
         deletedPersons.splice( personIndex , 1);
         this.setState({ persons : deletedPersons})
     }
-     /*switchNameHandler = (newName) => {
+     */
+/*switchNameHandler = (newName) => {
             console.log ('This was clicked!');
             this.setState({
                     persons : [
@@ -30,7 +32,8 @@ class App extends Component {
                         {name:newName, age : 27 },
                     ]
             })
-        }*/
+        }*//*
+
 
         nameChangeHandler = (event, id) => {
 
@@ -100,6 +103,7 @@ class App extends Component {
 }
 
 export default App;
+*/
 
 /*
 import UserInput from './UserInput.js';
@@ -134,6 +138,7 @@ class App extends Component {
              );
         }
 }
+export default App;
 */
 
 
