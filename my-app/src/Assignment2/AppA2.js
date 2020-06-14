@@ -1,3 +1,4 @@
+/*
 import React, { Component } from 'react';
 //import './App.css';
 import AppComponent from './AppComponent.js'
@@ -47,3 +48,4 @@ class AppA2 extends Component {
      }
 }
 export default AppA2;
+*/

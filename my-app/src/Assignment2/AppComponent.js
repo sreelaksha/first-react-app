@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 
 const appComponent = (props) => {
@@ -10,3 +11,4 @@ const appComponent = (props) => {
 }
 
 export default appComponent;
+*/

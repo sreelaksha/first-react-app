@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 
     const charComponent =(props) => {
@@ -21,3 +22,4 @@ import React from 'react';
 
 
 export default charComponent;
+*/

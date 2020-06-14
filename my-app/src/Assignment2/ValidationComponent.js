@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 
 const validationComponent = (props) => {
@@ -15,3 +16,4 @@ const validationComponent = (props) => {
 }
 
 export default validationComponent;
+*/
