@@ -2,3 +2,10 @@
   text-align: center;
 }
 
+.grey{
+    color: grey;
+}
+
+.bold{
+    font-weight :bold;
+}
