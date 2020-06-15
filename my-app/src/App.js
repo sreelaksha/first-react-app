@@ -107,7 +107,7 @@ class App extends Component {
             classes.push('bold'); //classes = ['red', 'bold']
         }
         return (
-            <StyleRoot>
+            //<StyleRoot>
                 <div className="App">
                     <p className = {classes.join(' ')} >Hi, This is a React App</p>
                     <button
@@ -115,7 +115,7 @@ class App extends Component {
                         onClick =  {this.togglePersonsHandler}> Toggle Persons List </button>
                     {jsPersons}
                 </div>
-            </StyleRoot>
+           // </StyleRoot>
         );
     //return React.createElement('div', null, React.createElement('div', { className: "App" }, React.createElement('h1', null, 'Hi, This is a React App')))
     }
