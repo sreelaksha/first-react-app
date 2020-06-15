@@ -54,6 +54,7 @@
     ]
   },
   "dependencies": {
-    "radium": "^0.26.0"
+    "radium": "^0.26.0",
+    "styled-components": "^5.1.1"
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium , {StyleRoot} from 'radium';
+//import Radium , {StyleRoot} from 'radium';
 import Person from './Person/Person.js'
 
 
@@ -120,8 +120,9 @@ class App extends Component {
     //return React.createElement('div', null, React.createElement('div', { className: "App" }, React.createElement('h1', null, 'Hi, This is a React App')))
     }
 }
+export default App;
 
-export default Radium(App);
+//export default Radium(App);
 
 
 
