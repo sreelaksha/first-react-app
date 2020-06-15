@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Person from './Person/Person.js';
 
     const StyledButton = styled.button`
-                            background-color: green;
+                            background-color: ${props => props.alt ? 'red' : 'green' };
                             color : white;
                             font: inherit;
                             border: 1px solid blue;
@@ -13,7 +13,7 @@ import Person from './Person/Person.js';
                             cursor: pointers;
 
                             &:hover {
-                                background-color : lightgreen;
+                                background-color : ${props => props.alt ? 'salmon' : 'lightgreen' };
                                 color : black;
                             }
                  `;
@@ -97,11 +97,11 @@ import Person from './Person/Person.js';
                             </div>
 
                 );
-        style.backgroundColor = 'Red';
+        /*style.backgroundColor = 'Red';
         style[':hover'] = {
                 backgroundColor : 'salmon',
                 color: 'black'
-        }
+        }*/
     }
 
 
@@ -117,6 +117,7 @@ import Person from './Person/Person.js';
                 <div className="App">
                     <p className = {classes.join(' ')} >Hi, This is a React App</p>
                    <StyledButton
+                        alt = {this.state.showPersons}
                         onClick =  {this.togglePersonsHandler}> Toggle Persons List
                     </StyledButton>
                     {jsPersons}
