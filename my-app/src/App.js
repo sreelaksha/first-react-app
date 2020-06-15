@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
 //import Radium , {StyleRoot} from 'radium';
-import Person from './Person/Person.js'
+import styled from 'styled-components';
+import Person from './Person/Person.js';
+
+    const StyledButton = styled.button`
+                            background-color: green;
+                            color : white;
+                            font: inherit;
+                            border: 1px solid blue;
+                            padding: 8px;
+                            cursor: pointers;
+
+                            &:hover {
+                                background-color : lightgreen;
+                                color : black;
+                            }
+                 `;
 
 
-class App extends Component {
-    state = {
-        persons : [
-                {id:'aa1', name:"Duggu", age: 9 },
-                {id:'bb1', name:"Revi", age : 46 },
-                {id:'cc1' ,name:"LAKSHA", age : 27 },
-        ],
-        otherState : 'some other value',
-        showPersons : false
-    }
+    class App extends Component {
+        state = {
+            persons : [
+                    {id:'aa1', name:"Duggu", age: 9 },
+                    {id:'bb1', name:"Revi", age : 46 },
+                    {id:'cc1' ,name:"LAKSHA", age : 27 },
+            ],
+            otherState : 'some other value',
+            showPersons : false
+        }
 
 
     deletePersonHandler = (personIndex) => {
@@ -61,18 +76,9 @@ class App extends Component {
          }
 
     render() {
-        const style = {
-            backgroundColor: 'green',
-            color : 'white',
-            font: 'inherit',
-            border: '1px solid blue',
-            padding: '8px',
-            cursor: 'pointer',
-            ':hover' : {
-                backgroundColor : 'lightgreen',
-                color : 'black'
-            }
-        };
+    const style = {
+
+    };
 
     let jsPersons = null;
     if(this.state.showPersons){
@@ -110,9 +116,9 @@ class App extends Component {
             //<StyleRoot>
                 <div className="App">
                     <p className = {classes.join(' ')} >Hi, This is a React App</p>
-                    <button
-                        style = {style}
-                        onClick =  {this.togglePersonsHandler}> Toggle Persons List </button>
+                   <StyledButton
+                        onClick =  {this.togglePersonsHandler}> Toggle Persons List
+                    </StyledButton>
                     {jsPersons}
                 </div>
            // </StyleRoot>
