@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './myApp.module.css';
 //import Radium , {StyleRoot} from 'radium';
-import styled from 'styled-components';
+//import styles from 'styled-components';
 import Person from './Person/Person.js';
 
 
@@ -63,7 +63,7 @@ class App extends Component {
 
     render() {
     let jsPersons = null;
-    let btnStyles = [styles.Button];
+    let btnStyles = '';
 
     if(this.state.showPersons){
         jsPersons= (
@@ -81,14 +81,14 @@ class App extends Component {
                             </div>
 
                 );
-          btnStyles.push(styles.Red);
+
         /*style.backgroundColor = 'Red';
         style[':hover'] = {
                 backgroundColor : 'salmon',
                 color: 'black'
         }*/
-
-
+        btnStyles = styles.Red;
+        
     }
 
 
@@ -103,7 +103,7 @@ class App extends Component {
             //<StyleRoot>
                 <div className={styles.App}>
                     <p className = {classes.join(' ')} >Hi, This is a React App</p>
-                   <button className = {btnStyles.join(' ')}
+                   <button className = {btnStyles}
                         alt = {this.state.showPersons}
                         onClick =  {this.togglePersonsHandler}> Toggle Persons List
                     </button >
