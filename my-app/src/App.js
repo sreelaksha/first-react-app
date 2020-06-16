@@ -88,7 +88,7 @@ class App extends Component {
                 color: 'black'
         }*/
         btnStyles = styles.Red;
-        
+
     }
 
 
