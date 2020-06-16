@@ -1,25 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
+import styles from './myApp.module.css';
 //import Radium , {StyleRoot} from 'radium';
 import styled from 'styled-components';
 import Person from './Person/Person.js';
 
-    const StyledButton = styled.button`
-                            background-color: ${props => props.alt ? 'red' : 'green' };
-                            color : white;
-                            font: inherit;
-                            border: 1px solid blue;
-                            padding: 8px;
-                            cursor: pointers;
 
-                            &:hover {
-                                background-color : ${props => props.alt ? 'salmon' : 'lightgreen' };
-                                color : black;
-                            }
-                 `;
-
-
-    class App extends Component {
+class App extends Component {
         state = {
             persons : [
                     {id:'aa1', name:"Duggu", age: 9 },
@@ -76,11 +62,9 @@ import Person from './Person/Person.js';
          }
 
     render() {
-    const style = {
-
-    };
-
     let jsPersons = null;
+    let btnStyles = [styles.Button];
+
     if(this.state.showPersons){
         jsPersons= (
                             <div>
@@ -97,29 +81,32 @@ import Person from './Person/Person.js';
                             </div>
 
                 );
+          btnStyles.push(styles.Red);
         /*style.backgroundColor = 'Red';
         style[':hover'] = {
                 backgroundColor : 'salmon',
                 color: 'black'
         }*/
+
+
     }
 
 
         const classes =[] ;
         if(this.state.persons.length <= 2){
-            classes.push('green'); //classes = ['green']
+            classes.push(styles.green); //classes = ['green']
         }
         if(this.state.persons.length <= 1){
-            classes.push('bold'); //classes = ['red', 'bold']
+            classes.push(styles.bold); //classes = ['red', 'bold']
         }
         return (
             //<StyleRoot>
-                <div className="App">
+                <div className={styles.App}>
                     <p className = {classes.join(' ')} >Hi, This is a React App</p>
-                   <StyledButton
+                   <button className = {btnStyles.join(' ')}
                         alt = {this.state.showPersons}
                         onClick =  {this.togglePersonsHandler}> Toggle Persons List
-                    </StyledButton>
+                    </button >
                     {jsPersons}
                 </div>
            // </StyleRoot>

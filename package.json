@@ -24,6 +24,7 @@
     "@testing-library/react": "^10.0.4",
     "@testing-library/user-event": "^10.1.0",
     "alex": "^8.0.0",
+    "css-loader": "^3.6.0",
     "eslint": "^6.1.0",
     "execa": "1.0.0",
     "fs-extra": "^9.0.0",
@@ -39,6 +40,7 @@
     "prettier": "2.0.5",
     "puppeteer": "^3.0.2",
     "strip-ansi": "^6.0.0",
+    "style-loader": "^1.2.1",
     "svg-term-cli": "^2.1.1",
     "tempy": "^0.2.1",
     "wait-for-localhost": "^3.1.0"
