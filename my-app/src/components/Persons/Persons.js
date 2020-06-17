@@ -1,19 +1,43 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Person from './Person/Person.js';
 
-    const persons = (props) => {
-        console.log('Persons.js Rendering...');
-    return props.persons.map((personList,index) => {
-                                       return (
-                                            <Person
-                                                clickMe = {()=>props.clicked(index)}
-                                                name = {personList.name}
-                                                age = {personList.age}
-                                                changed = {(event)=> props.changed(event, personList.id)}
-                                                key ={personList.id}
-                                            />
-                                        )
-                                });
-     }
+    class Persons extends Component {
 
-export default persons;
+        static getDerivedStateFromProps(props,state){
+            console.log('Persons.js getDerivedStateFromProps');
+            return true;
+        }
+
+       shouldComponentUpdate(nextProps, nextState){
+            console.log('Persons.js shouldComponentUpdate');
+            return true;
+        }
+
+        getSnapshotBeforeUpdate(prevProps, prevState){
+            console.log('Persons.js getSnapshotBeforeUpdate');
+            return {message : 'Snapshot! Snapshot!'};
+        }
+
+        componentDidUpdate(prevProps, prevState, snapshot) {
+            console.log('Persons.js componentDidUpdate');
+            console.log(snapshot);
+        }
+
+        render(){
+            console.log('Persons.js Rendering...');
+
+                return this.props.persons.map((personList,index) => {
+                           return (
+                                <Person
+                                    clickMe = {()=>this.props.clicked(index)}
+                                    name = {personList.name}
+                                    age = {personList.age}
+                                    changed = {(event)=> this.props.changed(event, personList.id)}
+                                    key ={personList.id}
+                                />
+                            )
+                });
+        }
+    }
+
+export default Persons;
