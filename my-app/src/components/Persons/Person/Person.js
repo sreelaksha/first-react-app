@@ -17,11 +17,8 @@ import styles from './personStyles.module.css';
                           `;*/
 
 const person = (props) => {
-    const random = Math.random();
+     console.log('Person.js Rendering...');
 
-    if(random > 0.7){
-        throw new Error('Something went wrong!');
-    }
     return (
     //<div className = "Person" style = {style}>
         <div className = {styles.Person}>
