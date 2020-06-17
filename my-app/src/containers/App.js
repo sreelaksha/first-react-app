@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import styles from './myApp.module.css';
 //import Radium , {StyleRoot} from 'radium';
 //import styles from 'styled-components';
-import Person from '../components/Persons/Person/Person.js';
-import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.js';
+import Persons from '../components/Persons/Persons.js';
+//import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.js';
+import Cockpit from '../components/Cockpit/Cockpit.js';
 
 
 class App extends Component {
@@ -64,51 +65,32 @@ class App extends Component {
 
     render() {
     let jsPersons = null;
-    let btnStyles = '';
+
 
     if(this.state.showPersons){
-        jsPersons= (
-                            <div>
-                                {this.state.persons.map((personList,index) => {
-                                    return <ErrorBoundary key ={personList.id}>
-                                    <Person
-                                                clickMe = {this.deletePersonHandler.bind(this,index)}
-                                                name = {personList.name}
-                                                age = {personList.age}
-                                                changed = {(event) => this.nameChangeHandler(event,personList.id)}
-                                            />
-                                    </ErrorBoundary>
-                                    })
-                                }
-                            </div>
-
-                );
-
+        jsPersons  =  <Persons
+                                persons= {this.state.persons}
+                                clicked = {this.deletePersonHandler}
+                                changed = {this.nameChangeHandler}
+                       />
         /*style.backgroundColor = 'Red';
         style[':hover'] = {
                 backgroundColor : 'salmon',
                 color: 'black'
         }*/
-        btnStyles = styles.Red;
-
     }
 
 
-        const classes =[] ;
-        if(this.state.persons.length <= 2){
-            classes.push(styles.green); //classes = ['green']
-        }
-        if(this.state.persons.length <= 1){
-            classes.push(styles.bold); //classes = ['red', 'bold']
-        }
+
+
         return (
             //<StyleRoot>
                 <div className={styles.App}>
-                    <p className = {classes.join(' ')} >Hi, This is a React App</p>
-                   <button className = {btnStyles}
-                        alt = {this.state.showPersons}
-                        onClick =  {this.togglePersonsHandler}> Toggle Persons List
-                    </button >
+                    <Cockpit
+                    showPersons = {this.state.showPersons}
+                    persons={this.state.persons}
+                    toggle ={this.togglePersonsHandler}
+                    />
                     {jsPersons}
                 </div>
            // </StyleRoot>
