@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import styles from './myApp.module.css';
 //import Radium , {StyleRoot} from 'radium';
 //import styles from 'styled-components';
-import Person from './Person/Person.js';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary.js';
+import Person from '../components/Persons/Person/Person.js';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.js';
 
 
 class App extends Component {
