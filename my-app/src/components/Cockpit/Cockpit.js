@@ -4,8 +4,12 @@ import styles from './cockpit.module.css';
 const Cockpit = (props) => {
     useEffect(() => {
         console.log('Cockpit.js useEffect');
-    });
 
+        // Http request...
+        setTimeout(()=> {
+            alert('This is coming from cloud');
+        },1000);
+    }, [props.persons]);
 
         const classes =[] ;
         let btnClass = '';
