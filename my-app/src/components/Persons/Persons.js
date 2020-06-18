@@ -23,6 +23,10 @@ import Person from './Person/Person.js';
             console.log(snapshot);
         }
 
+        componentWillUnmount(){
+            console.log('Persons.js - Component will unmount');
+        }
+
         render(){
             console.log('Persons.js Rendering...');
 
