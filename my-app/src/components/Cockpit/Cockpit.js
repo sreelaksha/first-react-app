@@ -3,13 +3,24 @@ import styles from './cockpit.module.css';
 
 const Cockpit = (props) => {
     useEffect(() => {
-        console.log('Cockpit.js useEffect');
+        console.log('Cockpit.js - useEffect');
 
         // Http request...
         setTimeout(()=> {
             alert('This is coming from cloud');
         },1000);
+        return () => {
+            console.log('Cockpit.js cleanup work on useEffect');
+        }
     }, [props.persons]);
+
+    useEffect(()=> {
+        console.log('Cockpit.js cleanup work on useEffect - 2');
+        return () => {
+                    console.log('Cockpit.js cleanup work on useEffect - 2');
+                }
+    })
+
 
         const classes =[] ;
         let btnClass = '';
