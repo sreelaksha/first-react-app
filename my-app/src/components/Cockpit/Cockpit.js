@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './cockpit.module.css';
 
-const cockpit = (props) => {
+const Cockpit = (props) => {
     useEffect(() => {
         console.log('Cockpit.js useEffect');
     });
@@ -31,4 +31,4 @@ const cockpit = (props) => {
     );
 }
 
-export default cockpit;
+export default Cockpit;
