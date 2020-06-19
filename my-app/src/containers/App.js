@@ -5,6 +5,7 @@ import styles from './myApp.module.css';
 import Persons from '../components/Persons/Persons.js';
 //import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.js';
 import Cockpit from '../components/Cockpit/Cockpit.js';
+import WithClass from '../hoc/WithClass.js';
 
 
 class App extends Component {
@@ -112,7 +113,7 @@ class App extends Component {
 
         return (
             //<StyleRoot>
-                <div className={styles.App}>
+                <WithClass classes = {styles.App}>
                         <button onClick = {() => {
                             this.setState({showCockpit : false});
                         }}> Remove Cockpit </button>
@@ -125,7 +126,7 @@ class App extends Component {
                         /> : null
                     }
                     {jsPersons}
-                </div>
+                </WithClass>
            // </StyleRoot>
         );
     //return React.createElement('div', null, React.createElement('div', { className: "App" }, React.createElement('h1', null, 'Hi, This is a React App')))
