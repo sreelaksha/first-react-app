@@ -10,7 +10,10 @@ import Person from './Person/Person.js';
 
        shouldComponentUpdate(nextProps, nextState){
             console.log('Persons.js shouldComponentUpdate');
-            if(nextProps.persons !== this.props.persons){
+            if(nextProps.persons !== this.props.persons ||
+                nextProps.clicked !== this.props.clicked ||
+                nextProps.changed !== this.props.changed
+            ){
                 return true;
             } else{
                 return false;
