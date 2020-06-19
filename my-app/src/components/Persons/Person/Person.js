@@ -7,15 +7,13 @@ import styles from './personStyles.module.css';
             render(){
                  console.log('Person.js Rendering...');
 
-                return (
-                //<div className = "Person" style = {style}>
-                    <div className = {styles.Person}>
-                        <p onClick = {this.props.clickMe}> This is {this.props.name} and i am {this.props.age} years old </p>
-                        <p>{this.props.children} </p>
-                        <input type = "text" onChange = { this.props.changed } value = {this.props.name}/>
-                    </div>
-               // </div>
-                );
+                return [
+
+                        <p key = "i1" onClick = {this.props.clickMe}> This is {this.props.name} and i am {this.props.age} years old </p>,
+                        <p key = "i2" >{this.props.children} </p>,
+                        <input type = "text" key = "i3" onChange = { this.props.changed } value = {this.props.name}/>
+
+                     ];
 
         }
 
