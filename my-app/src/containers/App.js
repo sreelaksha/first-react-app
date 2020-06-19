@@ -23,7 +23,8 @@ class App extends Component {
             ],
             otherState : 'some other value',
             showPersons : false,
-            showCockpit : true
+            showCockpit : true,
+            changeCounter : 0
         }
 
 
@@ -81,7 +82,12 @@ class App extends Component {
             const updatedPersons =[...this.state.persons] ;
             updatedPersons[personIndex] = newPersonsList;
 
-            this.setState({ persons : updatedPersons})
+            this.setState((prevState, props) => {
+                return{
+                            persons : updatedPersons,
+                            changeCounter : prevState.changeCounter + 1
+                     };
+            });
          }
 
          togglePersonsHandler = () => {
