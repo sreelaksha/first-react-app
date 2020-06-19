@@ -5,7 +5,8 @@ import styles from './myApp.module.css';
 import Persons from '../components/Persons/Persons.js';
 //import ErrorBoundary from '../ErrorBoundary/ErrorBoundary.js';
 import Cockpit from '../components/Cockpit/Cockpit.js';
-import WithClass from '../hoc/WithClass.js';
+import withClass from '../hoc/withClass.js';
+import Aux from '../hoc/Aux.js';
 
 
 class App extends Component {
@@ -113,7 +114,7 @@ class App extends Component {
 
         return (
             //<StyleRoot>
-                <WithClass classes = {styles.App}>
+                <Aux>
                         <button onClick = {() => {
                             this.setState({showCockpit : false});
                         }}> Remove Cockpit </button>
@@ -126,13 +127,13 @@ class App extends Component {
                         /> : null
                     }
                     {jsPersons}
-                </WithClass>
+                </Aux>
            // </StyleRoot>
         );
     //return React.createElement('div', null, React.createElement('div', { className: "App" }, React.createElement('h1', null, 'Hi, This is a React App')))
     }
 }
-export default App;
+export default withClass(App, styles.App);
 
 //export default Radium(App);
 
