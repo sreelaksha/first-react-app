@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import styles from './personStyles.module.css';
 //import styled from 'styled-components';
 import Aux from '../../../hoc/Aux.js' ;
+import withClass from '../../../hoc/withClass.js' ;
 
     class Person extends Component {
             render(){
@@ -18,7 +19,7 @@ import Aux from '../../../hoc/Aux.js' ;
     }
 
     };
-export default Person;
+export default withClass(Person, styles.Person) ;
 
 //export default Radium(person);
 
