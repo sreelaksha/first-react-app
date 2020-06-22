@@ -7,6 +7,11 @@ import Aux from '../../../hoc/Aux.js' ;
 import withClass from '../../../hoc/withClass.js' ;
 
     class Person extends Component {
+
+        componentDidMount(){
+            this.inputElement.focus();
+        }
+
             render(){
                  console.log('Person.js Rendering...');
 
@@ -14,7 +19,10 @@ import withClass from '../../../hoc/withClass.js' ;
                     <Aux>
                         <p  onClick = {this.props.clickMe}> This is {this.props.name} and i am {this.props.age} years old </p>
                         <p >{this.props.children} </p>
-                        <input type = "text"  onChange = { this.props.changed } value = {this.props.name}/>
+                        <input type = "text"
+                        ref = { (inputEl) => { this.inputElement = inputEl }}
+                        onChange = { this.props.changed }
+                        value = {this.props.name}/>
                     </Aux>
                 );
             }
