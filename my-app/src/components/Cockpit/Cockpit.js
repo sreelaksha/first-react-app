@@ -7,7 +7,7 @@ const Cockpit = (props) => {
 
         // Http request...
         setTimeout(()=> {
-            alert('This is coming from cloud');
+           // alert('This is coming from cloud');
         },2000);
         return () => {
             console.log('Cockpit.js cleanup work on useEffect');

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 //import Radium from 'radium';
 import styles from './personStyles.module.css';
 //import styled from 'styled-components';
@@ -16,9 +17,16 @@ import withClass from '../../../hoc/withClass.js' ;
                         <input type = "text"  onChange = { this.props.changed } value = {this.props.name}/>
                     </Aux>
                 );
-    }
-
+            }
     };
+
+Person.propTypes = {
+    clickMe : PropTypes.func,
+    name : PropTypes.string,
+    age : PropTypes.number,
+    changed : PropTypes.func
+};
+
 export default withClass(Person, styles.Person) ;
 
 //export default Radium(person);
