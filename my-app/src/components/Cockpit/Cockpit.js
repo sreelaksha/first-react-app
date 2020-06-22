@@ -1,14 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './cockpit.module.css';
 
 const Cockpit = (props) => {
+    const toggleBtnRef = useRef(null);
+
+
     useEffect(() => {
         console.log('Cockpit.js - useEffect');
-
         // Http request...
-        setTimeout(()=> {
+        /*setTimeout(()=> {
            // alert('This is coming from cloud');
-        },2000);
+        },2000);*/
+        toggleBtnRef.current.click();
         return () => {
             console.log('Cockpit.js cleanup work on useEffect');
         };
@@ -40,6 +43,7 @@ const Cockpit = (props) => {
             <h1> {props.title}</h1>
             <p className = {classes.join('')}  >Hi, This is a React App</p>
                <button className = {btnClass}
+                    ref = {toggleBtnRef}
                     onClick =  {props.toggle}> Toggle Persons List
                 </button >
             </div>
