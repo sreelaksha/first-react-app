@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './cockpit.module.css';
+import AuthContext from '../../context/auth-context.js';
 
 const Cockpit = (props) => {
     const toggleBtnRef = useRef(null);
@@ -9,7 +10,7 @@ const Cockpit = (props) => {
         console.log('Cockpit.js - useEffect');
         // Http request...
         /*setTimeout(()=> {
-           // alert('This is coming from cloud');
+            alert('This is coming from cloud');
         },2000);*/
         toggleBtnRef.current.click();
         return () => {
@@ -46,6 +47,10 @@ const Cockpit = (props) => {
                     ref = {toggleBtnRef}
                     onClick =  {props.toggle}> Toggle Persons List
                 </button >
+               <AuthContext.Consumer>
+                {(context)=>
+                        <button onClick = {context.login}> Login </button>}
+               </AuthContext.Consumer>
             </div>
     );
 }

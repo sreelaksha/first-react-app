@@ -39,15 +39,15 @@ import Person from './Person/Person.js';
 
                 return this.props.persons.map((personList,index) => {
                            return (
-                                <Person
+                           <Person
                                     clickMe = {()=>this.props.clicked(index)}
                                     name = {personList.name}
                                     age = {personList.age}
                                     changed = {(event)=> this.props.changed(event, personList.id)}
                                     key ={personList.id}
-                                />
+                            />
                             )
-                });
+                 });
         }
     }
 

@@ -7,6 +7,7 @@ import Persons from '../components/Persons/Persons.js';
 import Cockpit from '../components/Cockpit/Cockpit.js';
 import withClass from '../hoc/withClass.js';
 import Aux from '../hoc/Aux.js';
+import AuthContext from '../context/auth-context.js';
 
 
 class App extends Component {
@@ -24,7 +25,8 @@ class App extends Component {
             otherState : 'some other value',
             showPersons : false,
             showCockpit : true,
-            changeCounter : 0
+            changeCounter : 0,
+            isAuthenticated : false,
         }
 
 
@@ -95,7 +97,9 @@ class App extends Component {
             this.setState({ showPersons : !doesShow});
          }
 
-
+        loginHandler = () => {
+            this.setState({ isAuthenticated : true});
+        }
 
     render() {
         console.log('App.js Render...');
@@ -107,6 +111,7 @@ class App extends Component {
                                 persons= {this.state.persons}
                                 clicked = {this.deletePersonHandler}
                                 changed = {this.nameChangeHandler}
+                                isAuth1 = {this.state.isAuthenticated}
                        />
         /*style.backgroundColor = 'Red';
         style[':hover'] = {
@@ -124,6 +129,11 @@ class App extends Component {
                         <button onClick = {() => {
                             this.setState({showCockpit : false});
                         }}> Remove Cockpit </button>
+                    <AuthContext.Provider
+                        value = {{
+                            authenticated : this.state.isAuthenticated,
+                             login : this.loginHandler}}
+                     >
                     {this.state.showCockpit ?
                         <Cockpit
                         title = {this.props.appTitle}
@@ -133,6 +143,7 @@ class App extends Component {
                         /> : null
                     }
                     {jsPersons}
+                    </AuthContext.Provider>
                 </Aux>
            // </StyleRoot>
         );

@@ -5,6 +5,7 @@ import styles from './personStyles.module.css';
 //import styled from 'styled-components';
 import Aux from '../../../hoc/Aux.js' ;
 import withClass from '../../../hoc/withClass.js' ;
+import AuthContext from '../../../context/auth-context.js';
 
     class Person extends Component {
         constructor(props){
@@ -21,6 +22,10 @@ import withClass from '../../../hoc/withClass.js' ;
 
                 return (
                     <Aux>
+                      <AuthContext.Consumer>
+                        {(context) =>
+                                context.authenticated ? <p> Authenticated </p> : <p> Please Login </p>}
+                       </AuthContext.Consumer>
                         <p  onClick = {this.props.clickMe}> This is {this.props.name} and i am {this.props.age} years old </p>
                         <p >{this.props.children} </p>
                         <input type = "text"
@@ -28,7 +33,9 @@ import withClass from '../../../hoc/withClass.js' ;
                         ref = { this.inputElementRef }
                         onChange = { this.props.changed }
                         value = {this.props.name}/>
+
                     </Aux>
+
                 );
             }
     };
