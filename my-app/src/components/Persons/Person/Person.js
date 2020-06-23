@@ -23,7 +23,6 @@ import AuthContext from '../../../context/auth-context.js';
             render(){
                  console.log('Person.js Rendering...');
 
-
                 return (
                     <Aux>
                       {this.context.authenticated ?
