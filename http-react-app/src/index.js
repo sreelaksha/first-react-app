@@ -5,6 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
 
+    axios.defaults.baseURL = 'http://jsonplaceholder.typicode.com';
+
     axios.interceptors.request.use(request => {
            console.log(request);
            //Edit request config; always return request otherwise you are blocking the request
