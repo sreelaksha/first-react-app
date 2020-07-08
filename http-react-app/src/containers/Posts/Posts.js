@@ -12,7 +12,8 @@ class Posts extends Component{
             }
 
         componentDidMount(){
-                axios.get('/posts')
+            console.log(this.props);
+             axios.get('/posts')
                 .then(response =>{
                     const posts = response.data.slice(0,4);
                         const updatedPost =  posts.map(post => {
